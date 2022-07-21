@@ -13,13 +13,16 @@ public class Setor {
 		this.setorDescricao = descricao;
 		this.setorId = "S" + Integer.toString(Id);
 		Id = Id + 1;
+		
 	}
 	
 	public void setDescricao(String descricao) {
 		this.setorDescricao = descricao;
+		
 	}
 	
 	public String getDescricao() {
+		
 		return this.setorDescricao;
 	}
 	

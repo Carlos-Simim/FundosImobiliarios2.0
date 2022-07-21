@@ -24,7 +24,6 @@ public class Carteira{
 		this.Corretora = corretora;
 		this.taxa = 0;
 		
-		
 	}
 	
 	public void setNegociacao(LocalDate data, FundoImobiliario fundo, int quantidade, double valor, boolean tipo) {
@@ -50,14 +49,17 @@ public class Carteira{
 	}
 	
 	public String getProprietario() {
+		
 		return this.Proprietario;
 	}
 	
 	public LocalDate getDataCriacao() {
+		
 		return this.DataCriacao;
 	}
 	
 	public String getCorretora() {
+		
 		return this.Corretora;
 	}
 	
@@ -75,10 +77,12 @@ public class Carteira{
 	}
 	
 	public ArrayList<Negociacao> getNegociacoes (){
+		
 		return this.negociacoes;
 	}
 	
 	public double getTaxa(int i) {
+		
 		return this.getTaxa(i);
 	}
 	
@@ -100,6 +104,5 @@ public class Carteira{
 				" - "+this.Descricao+
 				" - "+this.Corretora;
 	}
-
 
 }

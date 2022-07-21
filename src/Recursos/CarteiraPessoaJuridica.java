@@ -12,11 +12,12 @@ public class CarteiraPessoaJuridica extends Carteira {
 	
 	public CarteiraPessoaJuridica() {
 		super();
+		
 	}
 	
 	public double getTaxa(int i) {
+		
 		return this.taxa;
 	}
-	
-	
+		
 }

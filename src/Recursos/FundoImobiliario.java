@@ -14,8 +14,7 @@ public class FundoImobiliario {
 		this.setor = new Setor(descricaoSetor);
 		this.Ticker = ticker;
 		this.Descricao = descricao;
-		
-		
+			
 	}
 	
 		public FundoImobiliario() {
@@ -23,15 +22,18 @@ public class FundoImobiliario {
 		}
 
 		public String getTicker() {
+			
 			return this.Ticker;
 		}
 		
 		public String getDescricao() {
-			return this.Descricao;
+			
+			return this.Descricao;			
 		}
 		
 		public String getSetorDescricao() {
-			return this.setor.getDescricao();
+			
+			return this.setor.getDescricao();			
 		}
 	
 		public void setRendimento(LocalDate data, double valor) {
@@ -48,7 +50,7 @@ public class FundoImobiliario {
 				}
 			}
 			
-			return total;
+			return total;			
 		}
 		
 		public double getRendimentoMesAno(LocalDate MesAnoConsultado) {
@@ -62,7 +64,7 @@ public class FundoImobiliario {
 				}
 			}
 			
-			return total;
+			return total;			
 		}
 
 		public double getRendimentoPeriodo(LocalDate inicioPeriodo, LocalDate finalPeriodo) {
@@ -77,19 +79,19 @@ public class FundoImobiliario {
 				}
 			}
 			
-			return total;
+			return total;			
 		}
 		
 		public ArrayList<Rendimento> getRendimentos(){
 			
-			return this.rendimentos;
+			return this.rendimentos;			
 		}
 		
 		@Override
 		public String toString() {
 			return this.Ticker+
 					" - "+this.Descricao+
-					" - "+this.setor.getDescricao();
+					" - "+this.setor.getDescricao();			
 		}
 	
 }

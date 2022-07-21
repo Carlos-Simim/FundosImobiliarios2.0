@@ -12,12 +12,14 @@ public class CarteiraPessoaFisica extends Carteira {
 	
 	public CarteiraPessoaFisica() {
 		super();
+		
 	}
 	
 	public double getTaxa(int i) {
 		double retorno = 0;
 		retorno = (this.getNegociacoes().get(i).getQuantidade() * this.getNegociacoes().get(i).getValor())*this.taxa;
-		return retorno;	
+		
+		return retorno;
 	}	
 	
 }

@@ -14,22 +14,26 @@ public class Rendimento {
 	public Rendimento(LocalDate data, double valor) {
 		this.DataPagamento = data;
 		this.ValorPago = valor;
+		
 	}
 	
 	public LocalDate getRendimentosData() {
 		if(this.DataPagamento != null) {
 				return this.DataPagamento;
 		}
+		
 		return null;
 	}
 	
 	public double getRendimentosValor() {
+		
 		return this.ValorPago; 	
 	}
 	
 	public void setRendimento(LocalDate data, double valor) {
 		this.DataPagamento = data;
 		this.ValorPago = valor;
+		
 	}
 	
 	@Override

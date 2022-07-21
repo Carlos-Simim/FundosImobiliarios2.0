@@ -12,7 +12,7 @@ public abstract class ExtratoCarteira {
 		+"\nTotal acumulado de taxas: R$" + carteira.getTotalTaxas()
 		+"\nTotal de compras: R$" + carteira.getTotalNegociacoes(true)
 		+"\nTotal de vendas: R$" + carteira.getTotalNegociacoes(false);
-		
+
 		return retorno;
 	}
 	

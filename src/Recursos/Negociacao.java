@@ -13,9 +13,7 @@ public class Negociacao {
 		
 	}
 	
-	
 	public Negociacao(LocalDate data, FundoImobiliario fundo, int quantidade, double valor, boolean tipo){
-		
 		this.dataNegociacao = data;
 		this.fundoNegociado = fundo;
 		this.quantidade = quantidade;
@@ -23,7 +21,6 @@ public class Negociacao {
 		this.tipo = tipo;
 		
 	}
-	
 	
 	public double getValorNegociacoes(boolean retorno) {
 		double Compra = 0;                           
@@ -43,31 +40,34 @@ public class Negociacao {
 		
 	}
 
-
 	public FundoImobiliario getTicker() {
-		return this.fundoNegociado;
 		
+		return this.fundoNegociado;		
 	}
 	
 	public LocalDate getData() {
-		return this.dataNegociacao;
+		
+		return this.dataNegociacao;		
 	}
 
-
 	public boolean getTipo() {
-		return this.tipo;
+		
+		return this.tipo;		
 	}
 	
 	public int getQuantidade() {
-		return this.quantidade;
+		
+		return this.quantidade;		
 	}
 	
 	public double getValor() {
-		return this.valorCota;
+		
+		return this.valorCota;		
 	}
 	
 	public FundoImobiliario getFundoNegociado() {
-		return this.fundoNegociado;
+		
+		return this.fundoNegociado;		
 	}
 	
 	@Override
