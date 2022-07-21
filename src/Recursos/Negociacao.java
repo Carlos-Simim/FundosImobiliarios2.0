@@ -4,20 +4,20 @@ import java.time.LocalDate;
 public class Negociacao {
 
 	private LocalDate dataNegociacao; 
-	private String Ticker; //Ticker
+	private FundoImobiliario fundoNegociado; 
 	private int quantidade;
-	private double valorCota; //Valor de cada cota
-	private boolean tipo; //Compra (true) ou venda (false)
+	private double valorCota; 
+	private boolean tipo;
 	
 	Negociacao(){
 		
 	}
 	
 	
-	public Negociacao(LocalDate data, String Ticker, int quantidade, double valor, boolean tipo){
+	public Negociacao(LocalDate data, FundoImobiliario fundo, int quantidade, double valor, boolean tipo){
 		
 		this.dataNegociacao = data;
-		this.Ticker = Ticker;
+		this.fundoNegociado = fundo;
 		this.quantidade = quantidade;
 		this.valorCota = valor;
 		this.tipo = tipo;
@@ -44,8 +44,8 @@ public class Negociacao {
 	}
 
 
-	public String getTicker() {
-		return this.Ticker;
+	public FundoImobiliario getTicker() {
+		return this.fundoNegociado;
 		
 	}
 	
@@ -66,12 +66,16 @@ public class Negociacao {
 		return this.valorCota;
 	}
 	
+	public FundoImobiliario getFundoNegociado() {
+		return this.fundoNegociado;
+	}
+	
 	@Override
 	public String toString() {
 		String retorno;
 		
 		retorno = this.dataNegociacao+
-				" - "+this.Ticker+
+				" - "+this.fundoNegociado.getTicker()+
 				" - "+this.quantidade+
 				" - "+this.valorCota+
 				" - ";
@@ -85,11 +89,5 @@ public class Negociacao {
 		
 		return retorno;
 	}
-	
-//	private LocalDate dataNegociacao; 
-//	private String Ticker; //Ticker
-//	private int quantidade;
-//	private double valorCota; //Valor de cada cota
-//	private boolean tipo; //Compra (true) ou venda (false)
 
 }

@@ -19,8 +19,8 @@ public class FundoImobiliario {
 	}
 	
 		public FundoImobiliario() {
-		// TODO Auto-generated constructor stub
-	}
+
+		}
 
 		public String getTicker() {
 			return this.Ticker;

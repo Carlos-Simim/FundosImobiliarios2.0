@@ -22,12 +22,13 @@ public class Carteira{
 		this.DataCriacao = data;
 		this.Descricao = descricao;
 		this.Corretora = corretora;
+		this.taxa = 0;
 		
 		
 	}
 	
-	public void setNegociacao(LocalDate data, String Ticker, int quantidade, double valor, boolean tipo) {
-		this.negociacoes.add(new Negociacao(data, Ticker, quantidade, valor, tipo));
+	public void setNegociacao(LocalDate data, FundoImobiliario fundo, int quantidade, double valor, boolean tipo) {
+		this.negociacoes.add(new Negociacao(data, fundo, quantidade, valor, tipo));
 		
 	}
 
