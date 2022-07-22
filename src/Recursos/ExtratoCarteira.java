@@ -7,9 +7,8 @@ public abstract class ExtratoCarteira {
 		
 		retorno = retorno + carteira;
 		
-		retorno = retorno + "\n\nData - Fundo - Quantidade - Valor - Tipo - Taxa" 		 
-		+ carteira.listaNegocios()
-		+"\nTotal acumulado de taxas: R$" + carteira.getTotalTaxas()
+		retorno = retorno + carteira.listaNegocios()
+		+"\n\nTotal acumulado de taxas: R$" + carteira.getTotalTaxas()
 		+"\nTotal de compras: R$" + carteira.getTotalNegociacoes(true)
 		+"\nTotal de vendas: R$" + carteira.getTotalNegociacoes(false);
 

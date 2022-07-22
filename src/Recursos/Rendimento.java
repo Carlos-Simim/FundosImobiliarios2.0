@@ -17,7 +17,7 @@ public class Rendimento {
 		
 	}
 	
-	public LocalDate getRendimentosData() {
+	public LocalDate getRendimentoData() {
 		if(this.DataPagamento != null) {
 				return this.DataPagamento;
 		}
@@ -25,7 +25,7 @@ public class Rendimento {
 		return null;
 	}
 	
-	public double getRendimentosValor() {
+	public double getRendimentoValor() {
 		
 		return this.ValorPago; 	
 	}

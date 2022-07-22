@@ -3,7 +3,7 @@ package Testes;
 import java.time.LocalDate;
 import Recursos.*;
 
-public class TesteExtrato_Parte4 {
+public class TesteExtratoPessoaFisica {
 
 	public static void main(String[] args) {
 		FundoImobiliario f1 = new FundoImobiliario("KNRI11","Kinea Renda Imobiliaria","Pra�a de Alimenta��o");

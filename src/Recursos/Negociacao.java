@@ -39,11 +39,6 @@ public class Negociacao {
 		}
 		
 	}
-
-	public FundoImobiliario getTicker() {
-		
-		return this.fundoNegociado;		
-	}
 	
 	public LocalDate getData() {
 		
@@ -74,10 +69,10 @@ public class Negociacao {
 	public String toString() {
 		String retorno;
 		
-		retorno = this.dataNegociacao+
-				" - "+this.fundoNegociado.getTicker()+
-				" - "+this.quantidade+
-				" - "+this.valorCota+
+		retorno = "Data: "+this.dataNegociacao+
+				" - Fundo: "+this.fundoNegociado.getTicker()+
+				" - Quantidade: "+this.quantidade+
+				" - Valor: "+this.valorCota+
 				" - ";
 		
 		if (this.tipo == true) {

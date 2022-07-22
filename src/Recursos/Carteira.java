@@ -99,10 +99,10 @@ public class Carteira{
 	
 	@Override
 	public String toString() {
-		return this.Proprietario+
-				" - "+this.DataCriacao+
-				" - "+this.Descricao+
-				" - "+this.Corretora;
+		return "Proprietário: "+this.Proprietario+
+				" - Criação: "+this.DataCriacao+
+				" - Descrição: "+this.Descricao+
+				" - Corretora: "+this.Corretora;
 	}
 
 }

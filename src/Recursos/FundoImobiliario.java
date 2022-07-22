@@ -45,8 +45,8 @@ public class FundoImobiliario {
 			double total = 0;
 			
 			for(int i = 0; i<this.rendimentos.size(); i++) {
-				if(this.rendimentos.get(i).getRendimentosData().getYear() == AnoConsultado.getYear()) {
-					total = total + this.rendimentos.get(i).getRendimentosValor();
+				if(this.rendimentos.get(i).getRendimentoData().getYear() == AnoConsultado.getYear()) {
+					total = total + this.rendimentos.get(i).getRendimentoValor();
 				}
 			}
 			
@@ -57,9 +57,9 @@ public class FundoImobiliario {
 			double total = 0;
 			
 			for(int i = 0; i<this.rendimentos.size(); i++) {
-				if(this.rendimentos.get(i).getRendimentosData().getYear() == MesAnoConsultado.getYear()) {
-					if(this.rendimentos.get(i).getRendimentosData().getMonth() == MesAnoConsultado.getMonth()) {
-						total = total + this.rendimentos.get(i).getRendimentosValor();
+				if(this.rendimentos.get(i).getRendimentoData().getYear() == MesAnoConsultado.getYear()) {
+					if(this.rendimentos.get(i).getRendimentoData().getMonth() == MesAnoConsultado.getMonth()) {
+						total = total + this.rendimentos.get(i).getRendimentoValor();
 					}
 				}
 			}
@@ -72,9 +72,9 @@ public class FundoImobiliario {
 			
 			for(int i = 0; i<this.rendimentos.size(); i++) {
 				
-				if(this.rendimentos.get(i).getRendimentosData().compareTo(inicioPeriodo) >=0){
-					if(this.rendimentos.get(i).getRendimentosData().compareTo(finalPeriodo) <=0) {
-						total = total + this.rendimentos.get(i).getRendimentosValor();
+				if(this.rendimentos.get(i).getRendimentoData().compareTo(inicioPeriodo) >=0){
+					if(this.rendimentos.get(i).getRendimentoData().compareTo(finalPeriodo) <=0) {
+						total = total + this.rendimentos.get(i).getRendimentoValor();
 					}	
 				}
 			}
