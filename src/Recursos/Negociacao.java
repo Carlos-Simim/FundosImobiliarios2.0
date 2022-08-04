@@ -1,7 +1,7 @@
 package Recursos;
 import java.time.LocalDate;
 
-public class Negociacao {
+public class Negociacao implements Comparable<Negociacao>{
 
 	private LocalDate dataNegociacao; 
 	private FundoImobiliario fundoNegociado; 
@@ -66,6 +66,19 @@ public class Negociacao {
 	}
 	
 	@Override
+	public int compareTo(Negociacao o)
+	{
+		int retorno = 0;
+		if(this.dataNegociacao.isBefore(o.dataNegociacao)) {
+			retorno = -1;
+		}else {
+			retorno = 1;
+		}
+		
+		return retorno;
+	}
+	
+	@Override
 	public String toString() {
 		String retorno;
 		
@@ -84,5 +97,7 @@ public class Negociacao {
 		
 		return retorno;
 	}
+
+	
 
 }

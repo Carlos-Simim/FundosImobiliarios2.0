@@ -4,10 +4,9 @@ import java.time.LocalDate;
 
 public class CarteiraPessoaFisica extends Carteira {
 
-	public CarteiraPessoaFisica(String proprietario, String descricao, String corretora, LocalDate data){		
+	public CarteiraPessoaFisica(String proprietario, String descricao, String corretora, LocalDate data, double taxa){		
 		super(proprietario, descricao, corretora, data);
-		this.taxa = 0.0003;
-		
+		this.taxa = taxa;		
 	}
 	
 	public CarteiraPessoaFisica() {

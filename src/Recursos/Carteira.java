@@ -3,6 +3,8 @@ package Recursos;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Carteira{
 
@@ -26,7 +28,14 @@ public class Carteira{
 		
 	}
 	
-	public void setNegociacao(LocalDate data, FundoImobiliario fundo, int quantidade, double valor, boolean tipo) {
+	public void setNegociacao (LocalDate data, FundoImobiliario fundo, int quantidade, double valor, boolean tipo)throws DataInvalidaException {
+		
+		
+		if(data.isBefore(LocalDate.now())) {
+			throw new DataInvalidaException("Data passada é anterior ao dia de hoje!");
+		}
+		
+				
 		this.negociacoes.add(new Negociacao(data, fundo, quantidade, valor, tipo));
 		
 	}
@@ -95,6 +104,19 @@ public class Carteira{
 		
 		
 		return totalTaxas;
+	}
+	
+	public List<Negociacao> getNegociacoesOrdemCronologica (boolean ordemDesejada){
+		List<Negociacao> retorno = new ArrayList<Negociacao>();
+		retorno = (ArrayList<Negociacao>) this.negociacoes.clone();
+		
+		if(ordemDesejada == true) {
+			Collections.sort(retorno);
+		}else {
+			Collections.sort(retorno, Collections.reverseOrder());
+		}
+				
+		return retorno;
 	}
 	
 	@Override
