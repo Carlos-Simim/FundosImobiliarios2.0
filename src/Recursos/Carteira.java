@@ -33,11 +33,9 @@ public class Carteira{
 		
 		if(data.isBefore(LocalDate.now())) {
 			throw new DataInvalidaException("Data passada é anterior ao dia de hoje!");
+		}else {				
+			this.negociacoes.add(new Negociacao(data, fundo, quantidade, valor, tipo));
 		}
-		
-				
-		this.negociacoes.add(new Negociacao(data, fundo, quantidade, valor, tipo));
-		
 	}
 
 	public double getTotalNegociacoes(boolean tipo) {

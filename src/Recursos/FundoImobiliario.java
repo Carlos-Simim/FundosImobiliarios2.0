@@ -13,8 +13,7 @@ public class FundoImobiliario {
 	public FundoImobiliario(String ticker, String descricao, String descricaoSetor){
 		this.setor = new Setor(descricaoSetor);
 		this.Ticker = ticker;
-		this.Descricao = descricao;
-			
+		this.Descricao = descricao;			
 	}
 	
 		public FundoImobiliario() {
@@ -38,7 +37,7 @@ public class FundoImobiliario {
 	
 		public void setRendimento(LocalDate data, double valor) {
 			this.rendimentos.add(new Rendimento(data, valor));
-
+			RankingFundos.adicionarRanking(this);
 		}
 		
 		public double getRendimentoAno(LocalDate AnoConsultado) {
@@ -85,6 +84,20 @@ public class FundoImobiliario {
 		public ArrayList<Rendimento> getRendimentos(){
 			
 			return this.rendimentos;			
+		}
+		
+		public double getRendimentosTotal() {
+			double soma = 0;
+			
+			for(Rendimento d : this.rendimentos) {
+				soma = soma + d.getRendimentoValor();
+			}
+			
+			return soma;
+		}
+		
+		public String getCategoria() {
+			return RankingFundos.getCategoria(this);
 		}
 		
 		@Override

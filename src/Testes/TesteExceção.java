@@ -21,6 +21,7 @@ public class TesteExceção {
 		}catch(DataInvalidaException exc){
 			System.out.println("Exceção: " + exc.getMessage());
 		}
+		
 	}
 
 }
