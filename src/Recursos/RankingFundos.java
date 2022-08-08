@@ -1,71 +1,49 @@
 package Recursos;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 
 public abstract class RankingFundos {
 
-	private static HashSet<FundoImobiliario> CategoriaA = new HashSet<FundoImobiliario>();
-	private static HashSet<FundoImobiliario> CategoriaB = new HashSet<FundoImobiliario>();
-	private static HashSet<FundoImobiliario> CategoriaC = new HashSet<FundoImobiliario>();
-	//static RankingFundos ranking = new RankingFundos();
+	public static HashMap<FundoImobiliario, Categoria> ranking = new HashMap<FundoImobiliario, Categoria>();
+	private static Categoria categoriaA = new Categoria("A");
+	private static Categoria categoriaB = new Categoria("B");
+	private static Categoria categoriaC = new Categoria("C");
 	
-	public static void adicionarRanking(FundoImobiliario fundoObj) {
-		double distribuicao = fundoObj.getRendimentosTotal();
+	public static void atualizarRanking(FundoImobiliario fundoObj) {
+		double totalRendimentos = fundoObj.getRendimentosTotal();
 		
-		if(distribuicao > 0) {
-			
-			if(distribuicao>=10000) {
-				CategoriaA.add(fundoObj);
+		if(totalRendimentos > 0) {
+			if(totalRendimentos >= 10000) {
+				ranking.put(fundoObj, categoriaA);
 			}
-			if(distribuicao>=5000 && distribuicao<10000) {
-				CategoriaB.add(fundoObj);
+			if(totalRendimentos >= 5000 && totalRendimentos < 10000) {
+				ranking.put(fundoObj, categoriaB);
 			}
-			if(distribuicao<5000) {
-				CategoriaC.add(fundoObj);
+			if(totalRendimentos < 5000) {
+				ranking.put(fundoObj, categoriaC);
 			}
-			
 		}
 		
-		limparRanking(fundoObj);
 	}
 	
-	private static void limparRanking(FundoImobiliario fundoObj) {
-		if(CategoriaA.contains(fundoObj)) {
-			CategoriaB.remove(fundoObj);
-			CategoriaC.remove(fundoObj);
-			return;
-		}
-		if(CategoriaB.contains(fundoObj)) {
-			CategoriaC.remove(fundoObj);
-		}
-	}
-	
-	public static ArrayList<FundoImobiliario> getFundos(){
-		ArrayList<FundoImobiliario> retorno = new ArrayList<FundoImobiliario>(CategoriaA);
-		retorno.addAll(new ArrayList<FundoImobiliario>(CategoriaB));
-		retorno.addAll(new ArrayList<FundoImobiliario>(CategoriaC));
+	public static String getListagemRanking(FundoImobiliario fundoObj) {
+		String retorno = "";
+		
+		retorno = retorno + fundoObj.toString();
+		retorno = retorno + " - Categoria: " + ranking.get(fundoObj);
+		retorno = retorno + " - Total de rendimentos: R$" + fundoObj.getRendimentosTotal();
 		
 		return retorno;
 	}
 	
-	public static String getCategoria(FundoImobiliario fundoObj) {
-		if(CategoriaA.contains(fundoObj)) {
-			return "Categoria A";
-		}
-		if(CategoriaB.contains(fundoObj)) {
-			return "Categoria B";
-		}
-		if(CategoriaC.contains(fundoObj)) {
-			return "Categoria C";
-		}
-		return null;
+	public static double getTotalRendimentos(FundoImobiliario fundoObj) {
+		return fundoObj.getRendimentosTotal();
 	}
 	
-	public static String getRankingsGeral() {
-		return "A: " + CategoriaA.toString() + 
-				"\nB: " + CategoriaB.toString() + 
-				"\nC: " + CategoriaC.toString();			
+	public static String getCategoria(FundoImobiliario fundoObj) {
+		
+		return ranking.get(fundoObj).toString();
 	}
 	
 }

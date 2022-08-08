@@ -37,7 +37,7 @@ public class FundoImobiliario {
 	
 		public void setRendimento(LocalDate data, double valor) {
 			this.rendimentos.add(new Rendimento(data, valor));
-			RankingFundos.adicionarRanking(this);
+			RankingFundos.atualizarRanking(this);
 		}
 		
 		public double getRendimentoAno(LocalDate AnoConsultado) {
@@ -94,10 +94,6 @@ public class FundoImobiliario {
 			}
 			
 			return soma;
-		}
-		
-		public String getCategoria() {
-			return RankingFundos.getCategoria(this);
 		}
 		
 		@Override

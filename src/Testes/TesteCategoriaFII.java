@@ -3,6 +3,7 @@ package Testes;
 import java.time.LocalDate;
 
 import Recursos.FundoImobiliario;
+import Recursos.RankingFundos;
 import Recursos.Rendimento;
 
 public class TesteCategoriaFII {
@@ -14,9 +15,9 @@ public class TesteCategoriaFII {
 		f1.setRendimento(LocalDate.parse("2022-12-25"), 3000);
 		f1.setRendimento(LocalDate.parse("2022-12-26"), 2000);
 		
-		System.out.println("Categoria de f1: " + f1.getCategoria());
-		//TODO parei no item 3 da parte 6, falta também marcar um meet com o Hilton
-		//pra ver melhor oq ele espera nesse item 2 da parte 6
+		System.out.println("Categoria de f1: " + RankingFundos.getCategoria(f1));
+		
+		
 	}
 
 }

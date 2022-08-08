@@ -3,6 +3,7 @@ package Testes;
 import java.time.LocalDate;
 
 import Recursos.FundoImobiliario;
+import Recursos.RankingFundos;
 
 public class TesteValorTotalFII {
 
@@ -13,7 +14,8 @@ public class TesteValorTotalFII {
 		f1.setRendimento(LocalDate.parse("2022-12-25"), 5000);
 		f1.setRendimento(LocalDate.parse("2022-12-25"), 2000);
 		
-		System.out.println("Total dos rendimentos de f1: R$" + f1.getRendimentosTotal());
+		//System.out.println("Total dos rendimentos de f1: R$" + RankingFundos.getTotalRendimentos(f1));
+		System.out.println(RankingFundos.ranking.get(0));
 		
 	}
 
