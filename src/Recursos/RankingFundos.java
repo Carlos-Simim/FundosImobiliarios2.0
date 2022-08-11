@@ -1,6 +1,8 @@
 package Recursos;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public abstract class RankingFundos {
 
@@ -23,12 +25,12 @@ public abstract class RankingFundos {
 		
 	}
 	
-	public static String getListagemRanking(FundoImobiliario fundoObj) {
-		String retorno = "";
+	public static List<FundoImobiliario> getListagemRanking() {
+		List<FundoImobiliario> retorno = new ArrayList<FundoImobiliario>();
 		
-		retorno = retorno + fundoObj.toString();
-		retorno = retorno + " - Categoria: " + ranking.get(fundoObj);
-		retorno = retorno + " - Total de rendimentos: R$" + fundoObj.getRendimentosTotal();
+		for(int i = 0; i<ranking.size(); i++) {
+			retorno.add((FundoImobiliario) ranking.keySet().toArray()[i]);
+		}
 		
 		return retorno;
 	}
