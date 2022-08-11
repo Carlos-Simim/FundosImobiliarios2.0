@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 import Recursos.*;
 
-public class TesteExceção {
+public class TesteExcecao {
 
 	public static void main(String[] args) {
 
-		FundoImobiliario f1 = new FundoImobiliario("KNRI11","Kinea Renda Imobiliaria","Praça de Alimentação");
+		FundoImobiliario f1 = new FundoImobiliario("KNRI11","Kinea Renda Imobiliaria","Praï¿½a de Alimentaï¿½ï¿½o");
 		CarteiraPessoaFisica c1 = new CarteiraPessoaFisica("Carlos", "Minha Carteira", "Banco do Brasil",LocalDate.parse("2022-06-24"), 0.0003);
 		
 		//Negociacao com a data aceitavel
@@ -19,7 +19,7 @@ public class TesteExceção {
 		try {
 			c1.setNegociacao(LocalDate.parse("2021-01-01"), f1, 1, 20, false);
 		}catch(DataInvalidaException exc){
-			System.out.println("Exceção: " + exc.getMessage());
+			System.out.println("ExceÃ§Ã£o: " + exc.getMessage());
 		}
 		
 	}
