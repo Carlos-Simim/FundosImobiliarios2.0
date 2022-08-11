@@ -1,7 +1,6 @@
 package Testes;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import Recursos.*;
 
@@ -9,7 +8,7 @@ public class TesteNegociacoesOrdemCronologica {
 	
 	public static void main(String[] args) {
 
-		FundoImobiliario f1 = new FundoImobiliario("KNRI11","Kinea Renda Imobiliaria","Praça de Alimentação");
+		FundoImobiliario f1 = new FundoImobiliario("KNRI11","Kinea Renda Imobiliaria","Praï¿½a de Alimentaï¿½ï¿½o");
 		CarteiraPessoaFisica c1 = new CarteiraPessoaFisica("Carlos", "Minha Carteira", "Banco do Brasil",LocalDate.parse("2022-06-24"), 0.0003);
 		
 		c1.setNegociacao(LocalDate.parse("2022-12-28"), f1,1, 10, true);

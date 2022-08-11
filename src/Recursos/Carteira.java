@@ -32,7 +32,7 @@ public class Carteira{
 		
 		
 		if(data.isBefore(LocalDate.now())) {
-			throw new DataInvalidaException("Data passada é anterior ao dia de hoje!");
+			throw new DataInvalidaException("Data passada ï¿½ anterior ao dia de hoje!");
 		}else {				
 			this.negociacoes.add(new Negociacao(data, fundo, quantidade, valor, tipo));
 		}
@@ -104,6 +104,7 @@ public class Carteira{
 		return totalTaxas;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Negociacao> getNegociacoesOrdemCronologica (boolean ordemDesejada){
 		List<Negociacao> retorno = new ArrayList<Negociacao>();
 		retorno = (ArrayList<Negociacao>) this.negociacoes.clone();
@@ -119,9 +120,9 @@ public class Carteira{
 	
 	@Override
 	public String toString() {
-		return "Proprietário: "+this.Proprietario+
-				" - Criação: "+this.DataCriacao+
-				" - Descrição: "+this.Descricao+
+		return "Proprietï¿½rio: "+this.Proprietario+
+				" - Criaï¿½ï¿½o: "+this.DataCriacao+
+				" - Descriï¿½ï¿½o: "+this.Descricao+
 				" - Corretora: "+this.Corretora;
 	}
 

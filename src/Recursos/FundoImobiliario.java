@@ -1,14 +1,13 @@
 package Recursos;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class FundoImobiliario {
 
 	private String Ticker;
 	private String Descricao;
 	private Setor setor;
-	private ArrayList<Rendimento> rendimentos = new ArrayList<Rendimento>();
+	private Agrupamento<Rendimento> rendimentos = new Agrupamento<Rendimento>();
 	
 	public FundoImobiliario(String ticker, String descricao, String descricaoSetor){
 		this.setor = new Setor(descricaoSetor);
@@ -81,7 +80,7 @@ public class FundoImobiliario {
 			return total;			
 		}
 		
-		public ArrayList<Rendimento> getRendimentos(){
+		public Agrupamento<Rendimento> getRendimentos(){
 			
 			return this.rendimentos;			
 		}
@@ -89,8 +88,8 @@ public class FundoImobiliario {
 		public double getRendimentosTotal() {
 			double soma = 0;
 			
-			for(Rendimento d : this.rendimentos) {
-				soma = soma + d.getRendimentoValor();
+			for(int i = 0; i<this.rendimentos.size(); i++) {
+				soma = soma + this.rendimentos.get(i).getRendimentoValor();
 			}
 			
 			return soma;
